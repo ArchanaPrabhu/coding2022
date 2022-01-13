@@ -21,6 +21,13 @@ void primeSieve(vector<int> &sieve) {
 }
 
 int main() {
+	
+	freopen("input.txt", "r", stdin);
+	freopen("output.txt", "w", stdout);
+	
+	int n;
+	cin >> n; 
+
 	vector<int> sieve(N, 1); // fill constructor
 	primeSieve(sieve); // pass by reference
 
