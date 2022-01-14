@@ -32,7 +32,7 @@ return 0;
 /*
 
 					a b c
-			a						""
+			a					   ""
 	ab			a 			b 	   		  ""
 abc		ab	ac 		a    bc 	b 	   c 	   ""
 
