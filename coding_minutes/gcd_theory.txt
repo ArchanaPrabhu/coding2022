@@ -1,0 +1,4 @@
+gcd_theory
+
+possible different binary strings of length n =. _ _ _ _ _ => 2^5
+
