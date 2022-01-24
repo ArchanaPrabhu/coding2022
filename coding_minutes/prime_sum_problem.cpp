@@ -2,7 +2,7 @@
 using namespace std;
 
 int solve(int N){
-    vector<int> v(N, 1);
+    vector<int> v(N+1, 1);
     
     for(int i=2;i<=N;i++) {
         if (v[i]) { 
@@ -13,15 +13,15 @@ int solve(int N){
     }
     
     int count = 0;
-    for (int i=2;i<=N;i++) {
+    for (int i=3;i<=N;i++) {
         if (v[i]) {
-            int match = N - i;
-            if (match > i && v[match]) {
-                cout << i << " " << match << endl;
-                count++;
-            }
+            int checkVal = i + 2;
+            if (checkVal <=N && v[checkVal]) { 
+                cout << i << " " << 2 << endl;
+                count++; }
         }
     }
+    
     return count;
 }
 
