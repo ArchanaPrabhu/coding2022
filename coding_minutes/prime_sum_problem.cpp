@@ -17,7 +17,7 @@ int solve(int N){
         if (v[i]) {
             int checkVal = i + 2;
             if (checkVal <=N && v[checkVal]) { 
-                cout << i << " " << 2 << endl;
+                // cout << i << " " << 2 << endl;
                 count++; }
         }
     }

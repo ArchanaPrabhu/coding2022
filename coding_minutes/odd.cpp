@@ -15,6 +15,5 @@ int main(){
 		cout<<"Even";
 	}
 
-
 	return 0;
-}
+}	
