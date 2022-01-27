@@ -1,3 +1,7 @@
+
+
+// there are 2 optimization which make the time complexity O(1)
+
 #include<iostream>
 #include<list>
 using namespace std;
@@ -15,27 +19,36 @@ public:
 		l.push_back(make_pair(u, v));
 	}
 
-	//find
+	//find 
+	// we do path compression opt
 	int findSet(int i, int parent[]) {
 		if (parent[i] == -1)	return i;
-
-		return findSet(parent[i], parent);
+		findSet(parent[i], parent);
 	}
 
 	//union
-	int union_set(int x, int y, int parent[]) {
+	int union_set(int x, int y, int parent[], int rank[]) {
 		int s1 = findSet(x, parent);
 		int s2 = findSet(y, parent);
 		if (s1!=s2) {
-			parent[s2] = s1;
+			if (rank[s1] < rank[s2]) {
+				parent[s1] = s2;
+				rank[s2] += rank[s1];
+			}
+			else {
+				parent[s2] = s1;
+				rank[s1] += rank[s2];
+
+			}
 		} 
 	}
 
 	bool contains_cycle() {
 		int *parent = new int[V];
+		int *rank = new intt[V];
 		for (int i=0;i<V;i++) {
-
 			parent[i] = -1;
+			rank[i] = 1; // each set contains 1 node initially
 		}
 		for (auto edge : l) {
 			int i = edge.first;
