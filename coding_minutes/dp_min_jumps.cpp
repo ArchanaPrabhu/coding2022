@@ -5,6 +5,7 @@ using namespace std;
 
 // top down based DP approach
 int min_jumps(vector<int> arr, int n, vector<int> dp, int i) {
+	cout <<"index " << i << endl;
 	if (i >= n) {
 		cout << "index : " << i << " return INT_MAX" << endl;
 		return INT_MAX;
@@ -37,7 +38,7 @@ int min_jumps(vector<int> arr, int n, vector<int> dp, int i) {
 }
 
 int main() {	
-	vector<int> arr = {3, 4, 2, 1, 2, 3, 7, 1, 1, 3};
+	vector<int> arr = {3, 4, 2, 1, 7, 1, 1, 3};
 	int n = arr.size();
 
 	vector<int> dp(n, 0);
