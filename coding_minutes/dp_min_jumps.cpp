@@ -30,7 +30,7 @@ int min_jumps(vector<int> arr, int n, vector<int> dp, int i) {
 		if (sub_steps != INT_MAX) {
 			steps = min(steps, sub_steps + 1);
 		}
-	cout << "max_jump " << max_jump << " ,j = " << j << endl;
+		cout << "max_jump " << max_jump << " ,j = " << j << endl;
 	}
 
 	cout << "index : " << i << " return dp[i] " << dp[i] << endl;
